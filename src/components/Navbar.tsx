@@ -1,0 +1,88 @@
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#education" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleClick = (href: string) => {
+    setMobileOpen(false);
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <button
+          onClick={() => handleClick("#about")}
+          className="font-display text-lg font-semibold tracking-tight text-foreground"
+        >
+          Academic Portfolio
+        </button>
+
+        {/* Desktop */}
+        <ul className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <button
+                onClick={() => handleClick(item.href)}
+                className="link-underline text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-background border-b border-border px-6 pb-4">
+          <ul className="flex flex-col gap-3">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <button
+                  onClick={() => handleClick(item.href)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
