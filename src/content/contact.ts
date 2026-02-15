@@ -7,8 +7,8 @@ export interface ContactLink {
 }
 
 export const contactLinks: ContactLink[] = [
-  { icon: Mail, label: "Email", href: "mailto:jane.smith@mit.edu" },
-  { icon: Github, label: "GitHub", href: "https://github.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: FileText, label: "Google Scholar", href: "https://scholar.google.com" },
+  { icon: Mail, label: "Email", href: "mailto:leonard.pleiss@tum.de" },
+  { icon: Github, label: "GitHub", href: "https://github.com/leonardpleiss" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://de.linkedin.com/in/leonard-s-pleiss-9b32171a3" },
+  { icon: FileText, label: "Google Scholar", href: "https://scholar.google.com/citations?user=FHdoH8wAAAAJ&hl=de" },
 ];
