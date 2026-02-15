@@ -26,6 +26,7 @@ export const projects: Project[] = [
     tags: ["Large Language Models", "Generalization", "Chess"],
     venue: "",
     github: "",
+    link: "https://arxiv.org/abs/2601.16823",
     year: "2026",
   },
 ];
