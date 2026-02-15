@@ -1,49 +1,5 @@
-import { ExternalLink, Github } from "lucide-react";
-
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  github?: string;
-  link?: string;
-  year: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Neural Text Summarization",
-    description:
-      "A transformer-based model for abstractive text summarization achieving state-of-the-art results on CNN/DailyMail benchmark. Published at ACL 2024.",
-    tags: ["NLP", "Deep Learning", "Transformers"],
-    github: "https://github.com",
-    link: "https://arxiv.org",
-    year: "2024",
-  },
-  {
-    title: "FairML Framework",
-    description:
-      "Open-source toolkit for evaluating and mitigating bias in machine learning models. Used by 50+ research groups worldwide.",
-    tags: ["Fairness", "Python", "Open Source"],
-    github: "https://github.com",
-    year: "2023",
-  },
-  {
-    title: "Conversational AI for Education",
-    description:
-      "Developed an intelligent tutoring system using large language models, deployed across three university courses with 2,000+ students.",
-    tags: ["LLM", "Education", "HCI"],
-    link: "https://example.com",
-    year: "2023",
-  },
-  {
-    title: "Graph Neural Networks for Drug Discovery",
-    description:
-      "Collaborative project with the Chemistry department applying GNNs to molecular property prediction, resulting in two Nature publications.",
-    tags: ["GNN", "Bioinformatics", "Collaboration"],
-    github: "https://github.com",
-    year: "2022",
-  },
-];
+import { ExternalLink, Github, BookOpen } from "lucide-react";
+import { projects } from "@/content";
 
 const ProjectsSection = () => {
   return (
@@ -67,13 +23,19 @@ const ProjectsSection = () => {
             >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex items-center gap-3 mb-2 flex-wrap">
                     <h3 className="text-lg font-display font-semibold text-foreground">
                       {project.title}
                     </h3>
                     <span className="text-xs text-muted-foreground font-body">
                       {project.year}
                     </span>
+                    {project.venue && (
+                      <span className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-0.5 rounded-md bg-accent/10 text-accent border border-accent/20">
+                        <BookOpen size={12} />
+                        {project.venue}
+                      </span>
+                    )}
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     {project.description}
