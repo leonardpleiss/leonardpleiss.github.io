@@ -10,40 +10,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Neural Text Summarization",
+    title: "Reliability-adjusted Prioritized Experience Replay",
     description:
-      "A transformer-based model for abstractive text summarization achieving state-of-the-art results on CNN/DailyMail benchmark. Published at ACL 2024.",
-    tags: ["NLP", "Deep Learning", "Transformers"],
+      "Proposes a transition sampling scheme for online reinforcement learning agents, yielding both theoretical and empirical improvements in learning efficiency across established approaches. Collaboration with Prof. Tobias Sutter and Prof. Maximilian Schiffer.",
+    tags: ["Reinforcement Learning", "Experience Replay"],
+    venue: "ICLR",
+    github: "",
+    link: "https://arxiv.org/abs/2506.18482",
+    year: "2026",
+  },
+  {
+    title: "Trapped in the past? Disentangling fluid and crystallized intelligence of large language models using chess",
+    description:
+      "Using chess as a controlled testbed, we show that GPT models perform well on memorized in-distribution positions but degrade to near-random performance on novel, reasoning-intensive tasks, indicating persistent limits in fluid intelligence despite scaling and reasoning-augmented inference. Collaboration with Prof. Maximilian Schiffer and Prof. Robert K. von Weizsäcker.",
+    tags: ["Large Language Models", "Generalization", "Chess"],
     venue: "",
-    github: "https://github.com",
-    link: "https://arxiv.org",
-    year: "2024",
-  },
-  {
-    title: "FairML Framework",
-    description:
-      "Open-source toolkit for evaluating and mitigating bias in machine learning models. Used by 50+ research groups worldwide.",
-    tags: ["Fairness", "Python", "Open Source"],
-    venue: "NeurIPS 2023",
-    github: "https://github.com",
-    year: "2023",
-  },
-  {
-    title: "Conversational AI for Education",
-    description:
-      "Developed an intelligent tutoring system using large language models, deployed across three university courses with 2,000+ students.",
-    tags: ["LLM", "Education", "HCI"],
-    venue: "ICML 2023",
-    link: "https://example.com",
-    year: "2023",
-  },
-  {
-    title: "Graph Neural Networks for Drug Discovery",
-    description:
-      "Collaborative project with the Chemistry department applying GNNs to molecular property prediction, resulting in two Nature publications.",
-    tags: ["GNN", "Bioinformatics", "Collaboration"],
-    venue: "Nature 2022",
-    github: "https://github.com",
-    year: "2022",
+    github: "",
+    year: "2026",
   },
 ];
