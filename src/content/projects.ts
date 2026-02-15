@@ -14,7 +14,7 @@ export const projects: Project[] = [
     description:
       "A transformer-based model for abstractive text summarization achieving state-of-the-art results on CNN/DailyMail benchmark. Published at ACL 2024.",
     tags: ["NLP", "Deep Learning", "Transformers"],
-    venue: "ACL 2024",
+    venue: "",
     github: "https://github.com",
     link: "https://arxiv.org",
     year: "2024",
