@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+import { navItems } from "@/content";
+import { profile } from "@/content";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,10 +31,9 @@ const Navbar = () => {
           onClick={() => handleClick("#about")}
           className="font-display text-lg font-semibold tracking-tight text-foreground"
         >
-          Academic Portfolio
+          {profile.siteTitle}
         </button>
 
-        {/* Desktop */}
         <ul className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <li key={item.href}>
@@ -54,7 +47,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -64,7 +56,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-background border-b border-border px-6 pb-4">
           <ul className="flex flex-col gap-3">

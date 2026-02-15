@@ -1,11 +1,4 @@
-import { Mail, Github, Linkedin, FileText } from "lucide-react";
-
-const links = [
-  { icon: Mail, label: "Email", href: "mailto:jane.smith@mit.edu" },
-  { icon: Github, label: "GitHub", href: "https://github.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: FileText, label: "Google Scholar", href: "https://scholar.google.com" },
-];
+import { contactLinks } from "@/content";
 
 const ContactSection = () => {
   return (
@@ -21,7 +14,7 @@ const ContactSection = () => {
         </div>
 
         <div className="section-fade-in flex justify-center gap-6" style={{ animationDelay: "0.15s" }}>
-          {links.map((link) => (
+          {contactLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
