@@ -7,24 +7,24 @@ export interface Education {
 
 export const education: Education[] = [
   {
-    degree: "Ph.D. in Computer Science",
-    institution: "Stanford University",
-    period: "2016 — 2020",
+    degree: "Ph.D. in Machine Learning",
+    institution: "Technical University Munich",
+    period: "2024 — present",
     description:
-      'Dissertation: "Towards Fair and Interpretable Machine Learning Systems." Advisor: Prof. John Doe. NSF Graduate Research Fellowship recipient.',
+      'Focused on reinforcement learning methods and generalization within large language models. Advisor: Prof. Schiffer.',
   },
   {
-    degree: "M.S. in Computer Science",
-    institution: "Stanford University",
+    degree: "M.Sc. in Human Factors Engineering",
+    institution: "Technical University Berlin",
     period: "2014 — 2016",
     description:
-      "Focus on artificial intelligence and statistical learning. GPA: 4.0/4.0.",
+      "Focus on statistical learning. Thesis: Localizing emotional processes within the human cerebral cortex using fMRI data. Supervised by Prof. Obermayer and Prof. Deniz. GPA: 4.0/4.0.",
   },
   {
-    degree: "B.S. in Mathematics & Computer Science",
-    institution: "University of Chicago",
-    period: "2010 — 2014",
+    degree: "B.Sc. in Psychology",
+    institution: "University of Potsdam",
+    period: "2016 — 2019",
     description:
-      "Summa cum laude. Phi Beta Kappa. Dean's List all semesters. Undergraduate thesis on topological data analysis.",
+      "Focus on cognitive science. Thesis: Investigating the relationship between media multitasking and cognitive-executive performance. Supervised by Dr. Soemer and Prof. Kliegl.",
   },
 ];
