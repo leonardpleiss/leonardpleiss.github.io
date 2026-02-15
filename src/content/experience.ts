@@ -7,31 +7,26 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    role: "Assistant Professor",
-    organization: "MIT — Department of Computer Science",
-    period: "2021 — Present",
+    role: "Senior Consultant for Data & AI",
+    organization: "Roland Berger",
+    period: "2022 — present",
     description:
-      "Leading the Intelligent Systems Lab. Teaching graduate courses in ML and NLP. Secured $1.2M in research funding. Supervising 5 Ph.D. students.",
+      "Worked on numerous large-scale data and machine learning projects across multiple industries on three contintents.",
   },
+  
   {
-    role: "Postdoctoral Researcher",
-    organization: "Google DeepMind",
-    period: "2020 — 2021",
+    role: "Junior Data Scientist",
+    organization: "Mazars",
+    period: "2020 - 2022",
     description:
-      "Worked on large-scale language models and responsible AI. Co-authored 4 papers at top-tier venues including NeurIPS and ICML.",
+      "Conceptualized and led the Data Utilization project, which layed the groundwork for building scalable data-driven audit solutions.",
   },
+  
   {
-    role: "Research Intern",
-    organization: "Microsoft Research",
-    period: "Summer 2018",
+    role: "Research Assistant",
+    organization: "Free University Berlin / Charité Berlin",
+    period: "2015 — 2020",
     description:
-      "Developed novel methods for few-shot learning in NLP tasks. Work integrated into Azure Cognitive Services.",
-  },
-  {
-    role: "Teaching Assistant",
-    organization: "Stanford University",
-    period: "2015 — 2019",
-    description:
-      "TA for CS229 (Machine Learning) and CS224N (NLP with Deep Learning). Received Outstanding TA Award in 2017.",
+      "Various constributions across multiple research projects.",
   },
 ];
