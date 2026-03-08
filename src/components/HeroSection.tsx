@@ -1,4 +1,4 @@
-import { profile } from "@/content";
+import { profile, contactLinks } from "@/content";
 import FadeIn from "./FadeIn";
 
 const HeroSection = () => {
@@ -6,18 +6,17 @@ const HeroSection = () => {
     <section id="about" className="pt-20 pb-10">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col-reverse md:flex-row gap-10 items-start">
-          {/* Left: Bio + Links */}
+          {/* Left: Bio */}
           <div className="space-y-5 min-w-0 flex-1">
             <FadeIn>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {profile.bio}
               </p>
             </FadeIn>
-
           </div>
 
-          {/* Right: Photo */}
-          <FadeIn className="shrink-0 self-center md:self-start">
+          {/* Right: Photo + Contact Icons */}
+          <FadeIn className="shrink-0 self-center md:self-start flex flex-col items-center gap-3">
             {profile.image ? (
               <img
                 src={profile.image}
@@ -31,6 +30,21 @@ const HeroSection = () => {
                 </span>
               </div>
             )}
+            {/* Contact icons below avatar */}
+            <div className="flex items-center gap-2">
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-colors"
+                  aria-label={link.label}
+                >
+                  <link.icon size={16} />
+                </a>
+              ))}
+            </div>
           </FadeIn>
         </div>
       </div>
