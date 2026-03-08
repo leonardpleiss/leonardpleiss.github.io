@@ -9,9 +9,6 @@ const HeroSection = () => {
           {/* Left: Bio + Links */}
           <div className="space-y-5 min-w-0 flex-1">
             <FadeIn>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {profile.bio}
               </p>
