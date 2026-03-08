@@ -2,6 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { navItems, contactLinks } from "@/content";
 import { profile } from "@/content";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
