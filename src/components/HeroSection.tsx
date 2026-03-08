@@ -9,12 +9,6 @@ const HeroSection = () => {
           {/* Left: Bio + Links */}
           <div className="space-y-5 min-w-0 flex-1">
             <FadeIn>
-              <h1 className="text-4xl font-display tracking-wide uppercase text-foreground">
-                {profile.name}
-              </h1>
-              <p className="text-sm text-muted-foreground mt-1">
-                PhD Researcher · {profile.university}
-              </p>
             </FadeIn>
 
             <FadeIn delay={0.1}>
