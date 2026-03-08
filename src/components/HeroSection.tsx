@@ -21,7 +21,7 @@ const HeroSection = () => {
               <img
                 src={profile.image}
                 alt={profile.name}
-                className="w-36 md:w-full md:h-full max-w-40 max-h-40 aspect-square rounded-full object-cover border-2 border-border shadow-lg shadow-foreground/5"
+                className="w-36 md:w-full md:h-full max-w-40 max-h-40 aspect-square rounded-full object-cover border-2 border-border shadow-lg shadow-foreground/5 hover:scale-105 transition-transform duration-300"
               />
             ) : (
               <div className="w-36 md:w-full md:h-full max-w-40 max-h-40 aspect-square rounded-full bg-secondary border-2 border-border shadow-lg shadow-foreground/5 flex items-center justify-center">

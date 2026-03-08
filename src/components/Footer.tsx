@@ -3,7 +3,8 @@ import { profile, contactLinks } from "@/content";
 const Footer = () => {
   return (
     <footer className="py-10 border-t border-border">
-      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-5">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-4">
+        <span className="text-lg font-display tracking-wide text-foreground">{profile.name}</span>
         <div className="flex items-center gap-4">
           {contactLinks.map((link) => (
             <a

@@ -125,6 +125,20 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <div className="flex items-center gap-2 mt-4 pt-3 border-t border-border">
+            {contactLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-colors"
+                aria-label={link.label}
+              >
+                <link.icon size={15} />
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </nav>
