@@ -6,12 +6,9 @@ const ExperienceSection = () => {
     <section id="experience" className="py-16 bg-card/50">
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-fade-in">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-2">
+          <h2 className="text-3xl font-display font-medium text-foreground mb-10">
             Experience
           </h2>
-          <p className="text-muted-foreground mb-12">
-            Professional and academic positions.
-          </p>
         </div>
 
         <div className="relative">
