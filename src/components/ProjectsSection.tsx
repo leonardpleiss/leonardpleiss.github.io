@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Github, BookOpen, ChevronDown } from "lucide-react";
 import { projects, profile } from "@/content";
+import FadeIn from "./FadeIn";
 
 /** Renders author string with the user's own name underlined */
 const AuthorList = ({ authors }: { authors: string }) => {
@@ -28,100 +29,91 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   const isLong = project.description.length > 280;
 
   return (
-    <article
-      key={project.title}
-      className="section-fade-in border border-border rounded-lg overflow-hidden transition-colors duration-300"
-      style={{ animationDelay: `${index * 0.1}s` }}
-    >
-      <div className="p-6 space-y-3">
-        {/* Line 1: Title */}
-        <h3 className="text-lg font-medium text-foreground leading-snug">
-          {project.title}
-        </h3>
+    <FadeIn delay={index * 0.1}>
+      <article className="border border-border rounded-lg overflow-hidden transition-all duration-300 hover:border-accent/40 hover:shadow-md hover:shadow-accent/5">
+        <div className="p-6 space-y-3">
+          <h3 className="text-lg font-medium text-foreground leading-snug">
+            {project.title}
+          </h3>
 
-        {/* Line 2: Authors */}
-        <p className="text-sm text-muted-foreground">
-          <AuthorList authors={project.authors} />
-        </p>
-
-        {/* Line 3: Venue + Year */}
-        <p className="text-sm">
-          <span className="text-accent font-medium">
-            {project.venue || "Preprint"}
-          </span>
-          <span className="text-muted-foreground ml-2">{project.year}</span>
-        </p>
-
-        {/* Abstract — collapsible if long */}
-        <div className="pt-1">
-          <p className={`text-sm text-muted-foreground leading-relaxed ${(isLong || project.image) && !expanded ? "line-clamp-2" : ""}`}>
-            {project.description}
+          <p className="text-sm text-muted-foreground">
+            <AuthorList authors={project.authors} />
           </p>
-          
-          {/* Image — only visible when expanded */}
-          {project.image && expanded && (
-            <div className="mt-4 rounded-md overflow-hidden border border-border">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-auto"
-                loading="lazy"
-              />
-            </div>
-          )}
-          
-          {(isLong || project.image) && (
-            <button
-              onClick={() => setExpanded(!expanded)}
-              className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent/80 font-medium mt-1.5 transition-colors"
-            >
-              <span>{expanded ? "Show less" : "Read more"}</span>
-              <ChevronDown size={12} className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`} />
-            </button>
-          )}
-        </div>
 
-        {/* Keywords + Links row */}
-        <div className="flex flex-wrap items-center gap-2 pt-1">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
-            >
-              {tag}
+          <p className="text-sm">
+            <span className="text-accent font-medium">
+              {project.venue || "Preprint"}
             </span>
-          ))}
+            <span className="text-muted-foreground ml-2">{project.year}</span>
+          </p>
 
-          {/* Spacer pushes links right */}
-          {(project.paper || project.github) && (
-            <div className="flex-1" />
-          )}
+          <div className="pt-1">
+            <p className={`text-sm text-muted-foreground leading-relaxed ${(isLong || project.image) && !expanded ? "line-clamp-2" : ""}`}>
+              {project.description}
+            </p>
+            
+            {project.image && expanded && (
+              <div className="mt-4 rounded-md overflow-hidden border border-border">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            
+            {(isLong || project.image) && (
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent/80 font-medium mt-1.5 transition-colors"
+              >
+                <span>{expanded ? "Show less" : "Read more"}</span>
+                <ChevronDown size={12} className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`} />
+              </button>
+            )}
+          </div>
 
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
-            >
-              <Github size={13} />
-              <span>Code</span>
-            </a>
-          )}
-          {project.paper && (
-            <a
-              href={project.paper}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
-            >
-              <BookOpen size={13} />
-              <span>Paper</span>
-            </a>
-          )}
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+
+            {(project.paper || project.github) && (
+              <div className="flex-1" />
+            )}
+
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+              >
+                <Github size={13} />
+                <span>Code</span>
+              </a>
+            )}
+            {project.paper && (
+              <a
+                href={project.paper}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+              >
+                <BookOpen size={13} />
+                <span>Paper</span>
+              </a>
+            )}
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </FadeIn>
   );
 };
 
@@ -129,11 +121,11 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-16 bg-card/50">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="section-fade-in">
+        <FadeIn>
           <h2 className="text-2xl font-display tracking-wide uppercase text-foreground mb-12">
             Selected Publications
           </h2>
-        </div>
+        </FadeIn>
 
         <div className="grid gap-8">
           {projects.map((project, i) => (

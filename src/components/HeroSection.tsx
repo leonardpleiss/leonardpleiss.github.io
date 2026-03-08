@@ -1,35 +1,49 @@
 import { profile, contactLinks } from "@/content";
+import FadeIn from "./FadeIn";
 
 const HeroSection = () => {
   return (
     <section id="about" className="pt-28 pb-16">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="section-fade-in flex flex-col-reverse md:flex-row gap-10 items-start">
-          {/* Left: Bio + Links — takes all available space */}
+        <div className="flex flex-col-reverse md:flex-row gap-10 items-start">
+          {/* Left: Bio + Links */}
           <div className="space-y-5 min-w-0 flex-1">
-            <p className="text-base text-muted-foreground leading-relaxed">
-              {profile.bio}
-            </p>
+            <FadeIn>
+              <h1 className="text-4xl font-display tracking-wide uppercase text-foreground">
+                {profile.name}
+              </h1>
+              <p className="text-sm text-muted-foreground mt-1">
+                PhD Researcher · {profile.university}
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {profile.bio}
+              </p>
+            </FadeIn>
 
             {/* Contact links */}
-            <div className="flex flex-wrap items-center gap-2 mt-8">
-              {contactLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
-                >
-                  <link.icon size={13} />
-                  <span>{link.title}</span>
-                </a>
-              ))}
-            </div>
+            <FadeIn delay={0.2}>
+              <div className="flex flex-wrap items-center gap-2 mt-8">
+                {contactLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+                  >
+                    <link.icon size={13} />
+                    <span>{link.title}</span>
+                  </a>
+                ))}
+              </div>
+            </FadeIn>
           </div>
 
-          {/* Right: Photo — self-start so it aligns to top, not stretching */}
-          <div className="shrink-0 self-center md:self-start">
+          {/* Right: Photo */}
+          <FadeIn className="shrink-0 self-center md:self-start">
             {profile.image ? (
               <img
                 src={profile.image}
@@ -43,7 +57,7 @@ const HeroSection = () => {
                 </span>
               </div>
             )}
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>
