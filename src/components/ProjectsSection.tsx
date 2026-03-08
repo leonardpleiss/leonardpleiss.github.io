@@ -36,17 +36,6 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
                   <div className="flex items-center gap-3 shrink-0 pt-0.5">
-                    {project.paper && (
-                      <a
-                        href={project.paper}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                        aria-label="Paper"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                    )}
                     {project.github && (
                       <a
                         href={project.github}
@@ -58,6 +47,17 @@ const ProjectsSection = () => {
                         <Github size={18} />
                       </a>
                     )}
+                    {project.paper && (
+                      <a
+                        href={project.paper}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        aria-label="Read paper"
+                      >
+                        <BookOpen size={18} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -67,17 +67,12 @@ const ProjectsSection = () => {
                 </p>
 
                 {/* Line 3: Venue + Year */}
-                <div className="flex items-center gap-3 text-sm">
-                  {project.venue ? (
-                    <span className="inline-flex items-center gap-1.5 font-medium px-2.5 py-0.5 rounded-md bg-accent/10 text-accent border border-accent/20">
-                      <BookOpen size={12} />
-                      {project.venue}
-                    </span>
-                  ) : (
-                    <span className="text-muted-foreground italic">Preprint / Under Review</span>
-                  )}
-                  <span className="text-muted-foreground">{project.year}</span>
-                </div>
+                <p className="text-sm">
+                  <span className="text-foreground font-medium">
+                    {project.venue || "Preprint"}
+                  </span>
+                  <span className="text-muted-foreground ml-2">{project.year}</span>
+                </p>
 
                 {/* Abstract */}
                 <p className="text-sm text-muted-foreground leading-relaxed pt-1">
