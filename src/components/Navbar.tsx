@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { navItems, contactLinks } from "@/content";
+import { navItems } from "@/content";
 import { profile } from "@/content";
 
 const Navbar = () => {
