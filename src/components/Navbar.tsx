@@ -34,28 +34,12 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => handleClick("#about")}
-            className="text-3xl font-display tracking-wide text-foreground"
-          >
-            {profile.name}
-          </button>
-          <span className="hidden sm:flex items-center gap-1.5 ml-1">
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-7 h-7 rounded-full flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-colors"
-                aria-label={link.label}
-              >
-                <link.icon size={14} />
-              </a>
-            ))}
-          </span>
-        </div>
+        <button
+          onClick={() => handleClick("#about")}
+          className="text-3xl font-display tracking-wide text-foreground"
+        >
+          {profile.name}
+        </button>
 
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-8">
