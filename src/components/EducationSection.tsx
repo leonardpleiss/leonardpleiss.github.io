@@ -6,7 +6,7 @@ const EducationSection = () => {
     <section id="education" className="py-16">
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-fade-in">
-          <h2 className="text-2xl font-display font-medium text-foreground mb-10">
+          <h2 className="text-2xl font-bold text-foreground mb-10">
             Education
           </h2>
         </div>
@@ -27,7 +27,7 @@ const EducationSection = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-display font-medium text-foreground">
+                <h3 className="text-lg font-bold text-foreground">
                   {edu.degree}
                 </h3>
                 <p className="text-sm text-accent font-medium mb-1">
