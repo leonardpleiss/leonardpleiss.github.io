@@ -19,7 +19,7 @@ export const projects: Project[] = [
     tags: ["Reinforcement Learning", "Experience Replay"],
     venue: "ICLR",
     paper: "https://arxiv.org/abs/2506.18482",
-    github: "",
+    github: "https://github.com/leonardpleiss/ReaPER",
     image: "",
     year: "2026",
   },
