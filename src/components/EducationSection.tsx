@@ -27,7 +27,7 @@ const EducationSection = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-display font-medium text-foreground">
+                <h3 className="text-lg font-bold text-foreground">
                   {edu.degree}
                 </h3>
                 <p className="text-sm text-accent font-medium mb-1">

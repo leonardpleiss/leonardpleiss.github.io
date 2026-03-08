@@ -46,7 +46,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
       <div className="p-6 space-y-3">
         {/* Line 1: Title */}
-        <h3 className="text-lg font-display font-medium text-foreground leading-snug">
+        <h3 className="text-lg font-bold text-foreground leading-snug">
           {project.title}
         </h3>
 
