@@ -13,7 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      display: ['Libre Baskerville', 'Georgia', 'serif'],
+      display: ['Bebas Neue', 'sans-serif'],
       body: ['Inter', 'system-ui', 'sans-serif'],
     },
     extend: {
