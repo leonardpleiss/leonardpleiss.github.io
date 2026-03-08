@@ -3,8 +3,8 @@
  *
  * All website content lives in this folder.
  * To update content, edit the individual files:
- *   - profile.ts    → name, bio, location, email
- *   - projects.ts   → research projects & publications
+ *   - profile.ts    → name, bio, location, email, university
+ *   - projects.ts   → research projects, co-authors, venues, links, images
  *   - education.ts  → degrees & institutions
  *   - experience.ts → professional positions
  *   - contact.ts    → social / contact links

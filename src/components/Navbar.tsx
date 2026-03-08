@@ -31,7 +31,7 @@ const Navbar = () => {
           onClick={() => handleClick("#about")}
           className="font-display text-lg font-semibold tracking-tight text-foreground"
         >
-          {profile.siteTitle}
+          {profile.name}
         </button>
 
         <ul className="hidden md:flex items-center gap-8">
