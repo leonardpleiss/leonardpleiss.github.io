@@ -3,13 +3,10 @@ import { Github, BookOpen, ChevronDown } from "lucide-react";
 import { projects, profile } from "@/content";
 import FadeIn from "./FadeIn";
 
-/** Renders author string with the user's own name underlined */
 const AuthorList = ({ authors }: { authors: string }) => {
   const ownerName = profile.name;
   const parts = authors.split(ownerName);
-  if (parts.length === 1) {
-    return <span>{authors}</span>;
-  }
+  if (parts.length === 1) return <span>{authors}</span>;
   return (
     <span>
       {parts.map((part, i) => (
@@ -35,34 +32,22 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           <h3 className="text-base font-semibold text-foreground leading-snug">
             {project.title}
           </h3>
-
           <p className="text-sm text-muted-foreground">
             <AuthorList authors={project.authors} />
           </p>
-
           <p className="text-sm">
-            <span className="text-accent font-medium">
-              {project.venue || "Preprint"}
-            </span>
+            <span className="text-accent font-medium">{project.venue || "Preprint"}</span>
             <span className="text-muted-foreground ml-2">{project.year}</span>
           </p>
-
           <div className="pt-1">
             <p className={`text-sm text-muted-foreground leading-relaxed ${(isLong || project.image) && !expanded ? "line-clamp-2" : ""}`}>
               {project.description}
             </p>
-            
             {project.image && expanded && (
               <div className="mt-4 rounded-md overflow-hidden border border-border">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
+                <img src={project.image} alt={project.title} className="w-full h-auto" loading="lazy" />
               </div>
             )}
-            
             {(isLong || project.image) && (
               <button
                 onClick={() => setExpanded(!expanded)}
@@ -73,41 +58,23 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
               </button>
             )}
           </div>
-
           <div className="flex flex-wrap items-center gap-2 pt-1">
             {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
-              >
+              <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">
                 {tag}
               </span>
             ))}
-
-            {(project.paper || project.github) && (
-              <div className="flex-1" />
-            )}
-
+            {(project.paper || project.github) && <div className="flex-1" />}
             {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
-              >
-                <Github size={13} />
-                <span>Code</span>
+              <a href={project.github} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors">
+                <Github size={13} /><span>Code</span>
               </a>
             )}
             {project.paper && (
-              <a
-                href={project.paper}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
-              >
-                <BookOpen size={13} />
-                <span>Paper</span>
+              <a href={project.paper} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors">
+                <BookOpen size={13} /><span>Paper</span>
               </a>
             )}
           </div>
@@ -117,24 +84,20 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   );
 };
 
-const ProjectsSection = () => {
-  return (
-    <section id="projects" className="py-16 bg-card/50">
-      <div className="max-w-5xl mx-auto px-6">
-        <FadeIn>
-          <h2 className="text-2xl font-display tracking-wide uppercase text-foreground mb-12">
-            Selected Publications
-          </h2>
-        </FadeIn>
-
-        <div className="grid gap-8">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={i} />
-          ))}
-        </div>
+const ProjectsSection = () => (
+  <section id="projects" className="py-16 bg-card/50">
+    <div className="max-w-5xl mx-auto px-6">
+      <FadeIn>
+        <h2 className="section-heading">Selected Publications</h2>
+        <div className="section-heading-rule" />
+      </FadeIn>
+      <div className="grid gap-8">
+        {projects.map((project, i) => (
+          <ProjectCard key={project.title} project={project} index={i} />
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default ProjectsSection;

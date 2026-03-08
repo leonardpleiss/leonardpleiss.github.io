@@ -47,7 +47,7 @@ const Navbar = () => {
               <li key={item.href}>
                 <button
                   onClick={() => handleClick(item.href)}
-                  className="link-underline text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="link-underline text-xs font-medium uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </button>
@@ -88,7 +88,7 @@ const Navbar = () => {
               <li key={item.href}>
                 <button
                   onClick={() => handleClick(item.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-xs font-medium uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </button>
