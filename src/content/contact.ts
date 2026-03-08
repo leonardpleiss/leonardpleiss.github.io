@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, BookOpen, type LucideIcon } from "lucide-react";
+import { Mail, Github, Linkedin, GraduationCap, type LucideIcon } from "lucide-react";
 
 export interface ContactLink {
   icon: LucideIcon;
