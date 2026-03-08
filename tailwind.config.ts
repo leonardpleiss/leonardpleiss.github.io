@@ -13,7 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      display: ['DM Serif Display', 'Georgia', 'serif'],
+      display: ['Libre Baskerville', 'Georgia', 'serif'],
       body: ['Inter', 'system-ui', 'sans-serif'],
     },
     extend: {
