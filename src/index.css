@@ -94,6 +94,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
@@ -115,18 +119,6 @@
 }
 
 @layer components {
-  .section-fade-in {
-    @apply opacity-0 translate-y-4;
-    animation: sectionFadeIn 0.6s ease-out forwards;
-  }
-
-  @keyframes sectionFadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   .link-underline {
     @apply relative inline-block;
   }
@@ -139,5 +131,13 @@
 
   .link-underline:hover::after {
     @apply scale-x-100;
+  }
+
+  .section-heading {
+    @apply text-3xl font-display tracking-wide uppercase text-foreground mb-3;
+  }
+
+  .section-heading-rule {
+    @apply w-10 h-0.5 bg-accent rounded-full mb-10;
   }
 }
