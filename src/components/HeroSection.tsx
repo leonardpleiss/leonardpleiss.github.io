@@ -23,7 +23,7 @@ const HeroSection = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 backdrop-blur-sm text-muted-foreground hover:bg-accent/15 hover:text-accent hover:border-accent/30 hover:shadow-sm transition-all duration-200"
                   >
                     <link.icon size={13} />
                     <span>{link.title}</span>
