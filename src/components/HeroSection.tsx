@@ -11,7 +11,7 @@ const HeroSection = () => {
               {profile.bio}
             </p>
 
-            {/* Contact links — icon-only with elegant hover effects */}
+            {/* Contact links */}
             <div className="flex flex-wrap items-center gap-2 mt-8">
               {contactLinks.map((link) => (
                 <a
@@ -28,17 +28,17 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right: Photo — larger and properly sized */}
-          <div className="shrink-0">
+          {/* Right: Photo — self-start so it aligns to top, not stretching */}
+          <div className="shrink-0 self-center md:self-start">
             {profile.image ? (
               <img
                 src={profile.image}
                 alt={profile.name}
-                className="w-44 h-44 md:w-48 md:h-48 rounded-full object-cover border-2 border-border"
+                className="w-36 h-36 md:w-40 md:h-40 rounded-full object-cover border-2 border-border"
               />
             ) : (
-              <div className="w-44 h-44 md:w-48 md:h-48 rounded-full bg-secondary border-2 border-border flex items-center justify-center">
-                <span className="text-4xl font-display font-semibold text-muted-foreground">
+              <div className="w-36 h-36 md:w-40 md:h-40 rounded-full bg-secondary border-2 border-border flex items-center justify-center">
+                <span className="text-4xl font-display font-medium text-muted-foreground">
                   {profile.initials}
                 </span>
               </div>
