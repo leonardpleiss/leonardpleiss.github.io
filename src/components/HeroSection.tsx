@@ -3,7 +3,7 @@ import FadeIn from "./FadeIn";
 
 const HeroSection = () => {
   return (
-    <section id="about" className="pt-20 pb-20">
+    <section id="about" className="pt-20 pb-10">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col-reverse md:flex-row gap-10 items-start">
           {/* Left: Bio + Links */}
