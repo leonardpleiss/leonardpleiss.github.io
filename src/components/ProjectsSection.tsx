@@ -33,17 +33,6 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
       className="section-fade-in border border-border rounded-lg overflow-hidden transition-colors duration-300"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      {project.image && (
-        <div className="w-full h-48 overflow-hidden border-b border-border">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      )}
-
       <div className="p-6 space-y-3">
         {/* Line 1: Title */}
         <h3 className="text-lg font-bold text-foreground leading-snug">
@@ -65,10 +54,23 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
         {/* Abstract — collapsible if long */}
         <div className="pt-1">
-          <p className={`text-sm text-muted-foreground leading-relaxed ${isLong && !expanded ? "line-clamp-2" : ""}`}>
+          <p className={`text-sm text-muted-foreground leading-relaxed ${(isLong || project.image) && !expanded ? "line-clamp-2" : ""}`}>
             {project.description}
           </p>
-          {isLong && (
+          
+          {/* Image — only visible when expanded */}
+          {project.image && expanded && (
+            <div className="mt-4 rounded-md overflow-hidden border border-border">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          )}
+          
+          {(isLong || project.image) && (
             <button
               onClick={() => setExpanded(!expanded)}
               className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent/80 font-medium mt-1.5 transition-colors"
