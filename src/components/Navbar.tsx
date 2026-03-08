@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <button
           onClick={() => handleClick("#about")}
-          className="text-2xl font-display tracking-wide text-foreground"
+          className="text-3xl font-display tracking-wide text-foreground"
         >
           {profile.name}
         </button>
