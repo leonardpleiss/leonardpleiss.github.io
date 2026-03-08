@@ -47,23 +47,28 @@ const Navbar = () => {
           >
             {profile.name}
           </button>
-          <span className="hidden sm:flex items-center gap-0.5 ml-0.5">
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/link h-7 rounded-full flex items-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 px-1.5"
-                aria-label={link.label}
-              >
-                <link.icon size={14} className="shrink-0" />
-                <span className="max-w-0 overflow-hidden group-hover/link:max-w-24 transition-all duration-200 ease-out whitespace-nowrap text-[11px] font-medium ml-0 group-hover/link:ml-1.5">
-                  {link.title}
-                </span>
-              </a>
-            ))}
-          </span>
+          <TooltipProvider delayDuration={100}>
+            <span className="hidden sm:flex items-center gap-0.5 ml-0.5">
+              {contactLinks.map((link) => (
+                <Tooltip key={link.label}>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-colors"
+                      aria-label={link.label}
+                    >
+                      <link.icon size={14} />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" className="text-xs">
+                    {link.title}
+                  </TooltipContent>
+                </Tooltip>
+              ))}
+            </span>
+          </TooltipProvider>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
