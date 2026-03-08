@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description:
       "Experience replay enables data-efficient learning from past experiences in online reinforcement learning agents. Traditionally, experiences were sampled uniformly from a replay buffer, regardless of differences in experience-specific learning potential. In an effort to sample more efficiently, researchers introduced Prioritized Experience Replay (PER). In this paper, we propose an extension to PER by introducing a novel measure of temporal difference error reliability. We theoretically show that the resulting transition selection algorithm, Reliability-adjusted Prioritized Experience Replay (ReaPER), enables more efficient learning than PER. We further present empirical results showing that ReaPER outperforms PER across various environment types, including the Atari-10 benchmark.",
     tags: ["Reinforcement Learning", "Experience Replay"],
-    venue: "ICLR",
+    venue: "International Conference on Learning Representations",
     paper: "https://arxiv.org/abs/2506.18482",
     github: "https://github.com/leonardpleiss/ReaPER",
     image: "",
