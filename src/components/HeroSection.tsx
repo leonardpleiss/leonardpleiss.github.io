@@ -1,4 +1,4 @@
-import { profile, contactLinks } from "@/content";
+import { profile } from "@/content";
 import FadeIn from "./FadeIn";
 
 const HeroSection = () => {
