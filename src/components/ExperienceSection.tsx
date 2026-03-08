@@ -3,7 +3,7 @@ import { experiences } from "@/content";
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-16 bg-card/50">
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-fade-in">
           <h2 className="text-3xl font-display font-semibold text-foreground mb-2">

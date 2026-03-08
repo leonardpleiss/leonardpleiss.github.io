@@ -125,7 +125,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-16 bg-card/50">
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-fade-in">
           <h2 className="text-3xl font-display font-semibold text-foreground mb-12">

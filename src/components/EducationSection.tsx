@@ -3,7 +3,7 @@ import { education } from "@/content";
 
 const EducationSection = () => {
   return (
-    <section id="education" className="py-24 bg-card/50">
+    <section id="education" className="py-16">
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-fade-in">
           <h2 className="text-3xl font-display font-semibold text-foreground mb-2">

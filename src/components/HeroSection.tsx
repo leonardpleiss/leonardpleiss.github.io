@@ -12,20 +12,17 @@ const HeroSection = () => {
             </p>
 
             {/* Contact links — icon-only with elegant hover effects */}
-            <div className="flex items-center gap-3 mt-8">
+            <div className="flex flex-wrap items-center gap-2 mt-8">
               {contactLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={link.title}
-                  className="group relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary/40 text-muted-foreground hover:bg-accent/15 hover:text-accent transition-all duration-300"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
                 >
-                  <link.icon size={18} className="shrink-0" />
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs font-medium bg-foreground text-background rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-                    {link.title}
-                  </span>
+                  <link.icon size={13} />
+                  <span>{link.title}</span>
                 </a>
               ))}
             </div>
