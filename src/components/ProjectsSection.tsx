@@ -128,7 +128,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-16 bg-card/50">
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-fade-in">
-          <h2 className="text-3xl font-display font-medium text-foreground mb-12">
+          <h2 className="text-2xl font-display font-medium text-foreground mb-12">
             Selected Publications
           </h2>
         </div>
