@@ -1,5 +1,26 @@
 import { ExternalLink, Github, BookOpen } from "lucide-react";
-import { projects } from "@/content";
+import { projects, profile } from "@/content";
+
+/** Renders author string with the user's own name underlined */
+const AuthorList = ({ authors }: { authors: string }) => {
+  const ownerName = profile.name;
+  const parts = authors.split(ownerName);
+  if (parts.length === 1) {
+    return <span>{authors}</span>;
+  }
+  return (
+    <span>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {part}
+          {i < parts.length - 1 && (
+            <span className="underline underline-offset-2">{ownerName}</span>
+          )}
+        </span>
+      ))}
+    </span>
+  );
+};
 
 const ProjectsSection = () => {
   return (
@@ -15,7 +36,7 @@ const ProjectsSection = () => {
           {projects.map((project, i) => (
             <article
               key={project.title}
-              className="section-fade-in border border-border rounded-lg overflow-hidden hover:bg-card transition-colors duration-300"
+              className="section-fade-in border border-border rounded-lg overflow-hidden hover:bg-card/60 transition-colors duration-300"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               {project.image && (
@@ -30,45 +51,19 @@ const ProjectsSection = () => {
               )}
 
               <div className="p-6 space-y-3">
-                {/* Line 1: Title + Links */}
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-display font-semibold text-foreground leading-snug">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center gap-3 shrink-0 pt-0.5">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                        aria-label="GitHub repository"
-                      >
-                        <Github size={18} />
-                      </a>
-                    )}
-                    {project.paper && (
-                      <a
-                        href={project.paper}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                        aria-label="Read paper"
-                      >
-                        <BookOpen size={18} />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                {/* Line 1: Title */}
+                <h3 className="text-lg font-display font-semibold text-foreground leading-snug">
+                  {project.title}
+                </h3>
 
                 {/* Line 2: Authors */}
                 <p className="text-sm text-muted-foreground">
-                  {project.authors}
+                  <AuthorList authors={project.authors} />
                 </p>
 
                 {/* Line 3: Venue + Year */}
                 <p className="text-sm">
-                  <span className="text-foreground font-medium">
+                  <span className="text-accent font-medium">
                     {project.venue || "Preprint"}
                   </span>
                   <span className="text-muted-foreground ml-2">{project.year}</span>
@@ -79,8 +74,8 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
 
-                {/* Keywords */}
-                <div className="flex flex-wrap gap-2 pt-1">
+                {/* Keywords + Links row */}
+                <div className="flex flex-wrap items-center gap-2 pt-1">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -89,6 +84,34 @@ const ProjectsSection = () => {
                       {tag}
                     </span>
                   ))}
+
+                  {/* Spacer pushes links right */}
+                  {(project.paper || project.github) && (
+                    <div className="flex-1" />
+                  )}
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-accent transition-colors"
+                    >
+                      <Github size={14} />
+                      <span>Code</span>
+                    </a>
+                  )}
+                  {project.paper && (
+                    <a
+                      href={project.paper}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-accent transition-colors"
+                    >
+                      <BookOpen size={14} />
+                      <span>Paper</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
