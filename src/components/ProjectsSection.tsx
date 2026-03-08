@@ -46,7 +46,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
       <div className="p-6 space-y-3">
         {/* Line 1: Title */}
-        <h3 className="text-lg font-display font-semibold text-foreground leading-snug">
+        <h3 className="text-lg font-display font-medium text-foreground leading-snug">
           {project.title}
         </h3>
 
@@ -128,7 +128,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-16 bg-card/50">
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-fade-in">
-          <h2 className="text-3xl font-display font-semibold text-foreground mb-12">
+          <h2 className="text-3xl font-display font-medium text-foreground mb-12">
             Projects
           </h2>
         </div>
