@@ -33,7 +33,7 @@ export const projects: Project[] = [
     venue: "",
     paper: "https://arxiv.org/abs/2601.16823",
     github: "",
-    image: "",
+    image: "img_trappedinthepast.jpg",
     year: "2026",
   },
   
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     venue: "ICLR",
     paper: "https://arxiv.org/abs/2506.18482",
     github: "https://github.com/leonardpleiss/ReaPER",
-    image: "",
+    image: "img_reaper.jpg",
     year: "2026",
   },
 ];
