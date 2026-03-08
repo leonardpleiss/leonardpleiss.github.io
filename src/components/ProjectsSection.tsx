@@ -32,7 +32,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
     <FadeIn delay={index * 0.1}>
       <article className="border border-border rounded-lg overflow-hidden transition-all duration-300 hover:border-accent/40 hover:shadow-md hover:shadow-accent/5">
         <div className="p-6 space-y-3">
-          <h3 className="text-lg font-medium text-foreground leading-snug">
+          <h3 className="text-sm font-semibold text-foreground leading-snug">
             {project.title}
           </h3>
 

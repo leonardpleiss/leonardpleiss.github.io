@@ -25,7 +25,7 @@ const ExperienceSection = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium text-foreground">
+                    <h3 className="text-sm font-semibold text-foreground">
                       {exp.role}
                     </h3>
                     <p className="text-sm text-accent font-medium mb-1">
