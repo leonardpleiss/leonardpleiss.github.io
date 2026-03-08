@@ -11,18 +11,21 @@ const HeroSection = () => {
               {profile.bio}
             </p>
 
-            {/* Labeled contact links */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            {/* Contact links — icon-only with elegant hover effects */}
+            <div className="flex items-center gap-3 mt-8">
               {contactLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
+                  title={link.title}
+                  className="group relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary/40 text-muted-foreground hover:bg-accent/15 hover:text-accent transition-all duration-300"
                 >
-                  <link.icon size={15} className="shrink-0" />
-                  <span>{link.label}</span>
+                  <link.icon size={18} className="shrink-0" />
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs font-medium bg-foreground text-background rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+                    {link.title}
+                  </span>
                 </a>
               ))}
             </div>
