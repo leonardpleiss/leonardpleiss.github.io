@@ -37,7 +37,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           </p>
           <p className="text-sm">
             <span className="text-accent font-medium">{project.venue || "Preprint"}</span>
-            <span className="text-muted-foreground ml-2">{project.year}</span>
+            <span className="inline-block w-px h-3 bg-border mx-2 align-middle" />
+            <span className="text-muted-foreground">{project.year}</span>
           </p>
           <div className="pt-1">
             <p className={`text-sm text-muted-foreground leading-relaxed ${(isLong || project.image) && !expanded ? "line-clamp-2" : ""}`}>
