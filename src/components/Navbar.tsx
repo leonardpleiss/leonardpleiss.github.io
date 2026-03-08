@@ -38,7 +38,11 @@ const Navbar = () => {
           onClick={() => handleClick("#about")}
           className="text-3xl font-display tracking-wide text-foreground"
         >
-          {profile.name}
+          {profile.name.split(" ").map((word, i, arr) => (
+            <span key={i} className={i === arr.length - 1 ? "text-accent" : ""}>
+              {i > 0 ? " " : ""}{word}
+            </span>
+          ))}
         </button>
 
         <div className="hidden md:flex items-center gap-8">
