@@ -17,6 +17,19 @@ export const projects: Project[] = [
     description:
       "Reinforcement Learning (RL) lacks benchmarks that enable precise, white-box diagnostics of agent behavior. Current environments often entangle complexity factors and lack ground-truth optimality metrics, making it difficult to isolate why algorithms fail. We introduce Synthetic Monitoring Environments (SMEs), an infinite suite of continuous control tasks. SMEs provide fully configurable task characteristics and known optimal policies. As such, SMEs allow for the exact calculation of instantaneous regret. Their rigorous geometric state space bounds allow for systematic within-distribution (WD) and out-of-distribution (OOD) evaluation. We demonstrate the framework’s benefit through multidimensional ablations of PPO, TD3, and SAC, revealing how specific environmental properties - such as action or state space size, reward sparsity and complexity of the optimal policy - impact WD and OOD performance. We thereby show that SMEs offer a standardized, transparent testbed for transitioning RL evaluation from empirical benchmarking toward rigorous scientific analysis.",
     tags: ["Reinforcement Learning", "Generalization", "Environment", "Benchmark"],
+    venue: "Reinforcement Learning Conference 2026",
+    paper: "",
+    github: "",
+    image: "",
+    year: "2026",
+  },
+
+  {
+    title: "Target-Aligned Reinforcement Learning",
+    authors: "Leonard S. Pleiss, Carolin Schmidt, Maximilian Schiffer",
+    description:
+      "Many value-based deep reinforcement learning algorithms rely on target networks - lagged copies of the online network - to stabilize training. While effective, this mechanism introduces a fundamental stability-recency tradeoff: slower target updates improve stability but reduce the recency of learning signals, hindering convergence speed. We propose Target-Aligned Reinforcement Learning (TARL), a simple drop-in refinement for existing algorithms that emphasizes transitions for which the target and online network estimates are highly aligned. By focusing updates on well-aligned targets, TARL mitigates the adverse effects of stale target estimates while retaining the stabilizing benefits of target networks. We empirically demonstrate consistent improvements within discrete and continuous control algorithms across various benchmark environments without any hyperparameter tuning, including a 38.18% peak score gain on Atari-10, while incurring less than a 4% increase in wall-clock time.",
+    tags: ["Reinforcement Learning"],
     venue: "",
     paper: "",
     github: "",
