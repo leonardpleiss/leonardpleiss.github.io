@@ -16,7 +16,7 @@ export const education: Education[] = [
   {
     degree: "M.Sc. in Human Factors Engineering",
     institution: "Technical University Berlin",
-    period: "2014 — 2016",
+    period: "2019 - 2022",
     description:
       "",
   },
